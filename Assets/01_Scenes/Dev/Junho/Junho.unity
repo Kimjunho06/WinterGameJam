@@ -221,7 +221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defalutSpeed: 9
   dashSpeed: 1000
-  speed: 9
+  _dashDelay: 3
+  _isDash: 0
 --- !u!61 &794548054
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     [Header("Player Status")]
     public float defalutSpeed = 9f;
     public float dashSpeed;
-    public float speed = 9f;
+    private float speed = 9f;
 
     public float _dashDelay;
 
