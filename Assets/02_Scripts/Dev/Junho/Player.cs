@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        currentHP--;
+        if (collision.gameObject.CompareTag("Pattern"))
+        {
+            currentHP--;
+        }
     }
 }
