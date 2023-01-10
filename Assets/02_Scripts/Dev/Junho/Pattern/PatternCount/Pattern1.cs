@@ -61,37 +61,37 @@ public class Pattern1 : MonoBehaviour
 
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);// 여기까지 한 루틴
 
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);
 
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);
         
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);
         
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);
         
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);
         
         seq.AppendCallback(DownLaserWarning)
         .AppendInterval(2f)
-        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 10), new Vector2(53, 2))))
+        .AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(0, 15.5f), new Vector2(53, 2))))
         .AppendInterval(1f);
         
         seq.AppendCallback(DownLaserWarning)
@@ -107,26 +107,26 @@ public class Pattern1 : MonoBehaviour
         seq.AppendCallback(RightInnerLaserWarning)
             .AppendInterval(1.2f)
             .AppendCallback(RightouterLaserWarning)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(23, 0), new Vector2(2, 30), new Vector3(0,0), 0.8f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(27, 0), new Vector2(2, 30), new Vector3(0,0), 0.8f)))
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(23, 0), 0.8f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(27, 0), 0.8f)));
 
         seq.AppendCallback(RightInnerLaserWarning)
             .AppendInterval(1.2f)
             .AppendCallback(RightouterLaserWarning)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(23, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(27, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(23, 0), 0.8f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(27, 0), 0.8f)));
 
         seq.AppendCallback(RightInnerLaserWarning)
             .AppendInterval(1.2f)
             .AppendCallback(RightouterLaserWarning)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(23, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(27, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(23, 0), 0.8f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(27, 0), 0.8f)));
 
     }
 
@@ -136,26 +136,26 @@ public class Pattern1 : MonoBehaviour
         seq.AppendCallback(LeftInnerLaserWarning)
             .AppendInterval(1.2f)
             .AppendCallback(LeftouterLaserWarning)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(-23, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(-27, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-23, 0), 0.8f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-27, 0), 0.8f)));
 
         seq.AppendCallback(LeftInnerLaserWarning)
             .AppendInterval(1.2f)
             .AppendCallback(LeftouterLaserWarning)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(-23, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(-27, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-23, 0), 0.8f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-27, 0), 0.8f)));
         
         seq.AppendCallback(LeftInnerLaserWarning)
             .AppendInterval(1.2f)
             .AppendCallback(LeftouterLaserWarning)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(-23, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(-27, 0), new Vector2(2, 30), new Vector3(0, 0), 0.8f)))
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-23, 0), 0.8f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-27, 0), 0.8f)));
     }
 
     private void RightInnerLaserWarning()
@@ -227,8 +227,8 @@ public class Pattern1 : MonoBehaviour
             .AppendCallback(LeftouterLaserWarning)
             .AppendInterval(1.2f)
             //.AppendInterval(1f)
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(23, 0), 0.2f)))
-            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-23, 0), 0.2f)));
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(27, 0), 0.2f)))
+            .AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(0, 0), new Vector2(2, 30), new Vector3(-27, 0), 0.2f)));
 
         
     }
@@ -245,7 +245,7 @@ public class Pattern1 : MonoBehaviour
     {
         GameObject a = PoolManager.Instance.Pop(_horizontalLaser, createPos, Quaternion.identity);
         a.transform.localScale = scale;
-        a.transform.DOMove(new Vector3(0, -10), 0.8f);
+        a.transform.DOMove(new Vector3(0, -16), 0.8f);
         yield return new WaitForSeconds(1f);
         PoolManager.Instance.Push(a);
     }
