@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Battern3Bullet : MonoBehaviour
+public class Pattern3Bullet : MonoBehaviour
 {
     public float speed = 5f;
     
