@@ -38,6 +38,8 @@ public class Pattern1 : MonoBehaviour
         
         seq.AppendInterval(2f); // 마지막 띵 부분
         seq.AppendCallback(Pattern1Last);
+
+        seq.Append(transform.DOMove(new Vector3(0, 21, 0), 0.8f));
     }
 
     private void DownLaserWarning() // 워닝이 내려오기
