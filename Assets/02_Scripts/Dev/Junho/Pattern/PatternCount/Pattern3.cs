@@ -18,7 +18,7 @@ public class Pattern3 : MonoBehaviour
     public GameObject middleup;
     public GameObject middledown;
 
-    private bool _isBounce = true;
+    private bool _isBounce = false;
 
     private void Awake()
     {
@@ -42,6 +42,8 @@ public class Pattern3 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2, 2), 0.2f));
+        seq.AppendInterval(1f);
+
         seq.AppendCallback(() => _isBounce = true);
 
         seq.AppendInterval(0.5f);
