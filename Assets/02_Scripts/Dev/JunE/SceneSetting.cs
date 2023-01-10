@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening;
 
 public class SceneSetting : MonoBehaviour
 {
@@ -13,7 +13,22 @@ public class SceneSetting : MonoBehaviour
     [SerializeField] GameObject ExplainPanel;
     public void OnClick()
     {
-        ExplainPanel.SetActive(true);
+        if (!ExplainPanel.activeSelf)
+        {
+            ExplainPanel.SetActive(true);
+            ExplainPanel.transform.localPosition = new Vector2(transform.localPosition.x , transform.localPosition.y + 500);
+        }
+
+        if(ButtonManager.Instance.isMax)
+        {
+            ExplainPanel.transform.DOScale(new Vector3(2.4f,2,1),0.7f);
+            ExplainPanel.transform.DOMove(new Vector3(960,540,0), 0.8f);
+        }
+        else
+        {
+            ExplainPanel.transform.DOScale(new Vector3(1, 1, 1),0.7f);
+            ExplainPanel.transform.DOMove(new Vector3(1450, 335, 0), 0.8f);
+        }
         Explain explain = GameObject.Find("ExplainPanel").GetComponent<Explain>();
         explain.UpdateExplain(nowIndex, image, nameTxt, levelTxt, timeTxt);
     }
