@@ -10,13 +10,14 @@ public class Pattern1 : MonoBehaviour
     public GameObject _horizontalLaser;
     public GameObject _verticalLaser;
 
-
-
+    private void Start()
+    {
+        ChromeMove();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ChromeMove();
         }
     }
 
