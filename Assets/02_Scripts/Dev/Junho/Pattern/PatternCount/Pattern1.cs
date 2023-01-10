@@ -27,7 +27,7 @@ public class Pattern1 : MonoBehaviour
         seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(0, 9), new Vector2(19, 10))));
         seq.AppendInterval(0.8f);
         seq.Append(transform.DOMove(new Vector3(0, 9, 0), 0.8f)); // 여기까지 크롬 내려오는 과정
-        seq.AppendCallback(() => StartCoroutine(ChromeDetail()));
+        seq.AppendCallback(() => StartCoroutine(ChromeBounce()));
 
         seq.AppendCallback(RepeatHorizontalLaser);
         seq.AppendInterval(24f); // 가로 패턴 끝날 떄 까지 대기 초
@@ -259,7 +259,7 @@ public class Pattern1 : MonoBehaviour
         PoolManager.Instance.Push(a);
     }
 
-    IEnumerator ChromeDetail()
+    IEnumerator ChromeBounce()
     {
         while (true)
         {
@@ -267,7 +267,6 @@ public class Pattern1 : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.5f);
             yield return new WaitForSeconds(0.1f);
-            
         }
     }
 }
