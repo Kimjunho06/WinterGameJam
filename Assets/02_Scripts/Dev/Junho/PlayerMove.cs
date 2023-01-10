@@ -31,9 +31,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         MoveToMouse();
-
-        Mathf.Clamp(transform.position.x, -27, 27);
-        Mathf.Clamp(transform.position.y, -15.5f, 15.5f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26),Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && !_isDash)
         {
