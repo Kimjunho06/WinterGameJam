@@ -10,7 +10,6 @@ public class Pattern2 : MonoBehaviour
     public GameObject _horizontalLaser;
     public GameObject _verticalLaser;
 
-    public bool _passPattern3;
 
     private void Update()
     {
@@ -40,9 +39,8 @@ public class Pattern2 : MonoBehaviour
 
         seq.AppendCallback(() => _horizontalLaser.transform.DOScale(new Vector3(0, 0), 0.2f));
         seq.AppendCallback(() => _verticalLaser.transform.DOScale(new Vector3(0, 0), 0.2f));
-
-        seq.AppendCallback(() => _passPattern3 = true);
-
+        seq.AppendInterval(0.5f);
+        seq.AppendCallback(() => transform.DOScale(new Vector2(0, 0), 0.2f));
     }
 
     private void RotateLaser()

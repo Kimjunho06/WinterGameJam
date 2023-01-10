@@ -18,12 +18,10 @@ public class Pattern3 : MonoBehaviour
     public GameObject middleup;
     public GameObject middledown;
 
-    private Pattern2 _p2;
     private bool _isBounce = true;
 
     private void Awake()
     {
-        _p2= GetComponent<Pattern2>();
     }
 
     private void Start()
@@ -43,14 +41,13 @@ public class Pattern3 : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
 
-        if (_p2._passPattern3)
-        {
-            seq.AppendCallback(() => _isBounce = true);
-            seq.AppendCallback(RotateChrome);
-            seq.AppendInterval(3.5f);
-            //seq.AppendCallback(() => _isBounce = false);
-            //seq.Append(transform.DOScale(new Vector3(0,0,0), 0.5f));
-        }
+        seq.Append(transform.DOScale(new Vector2(2, 2), 0.2f));
+        seq.AppendCallback(() => _isBounce = true);
+
+        seq.AppendInterval(0.5f);
+
+        seq.AppendCallback(RotateChrome);
+        
     }
 
     private void RotateChrome() // 여기 고치기
@@ -68,36 +65,62 @@ public class Pattern3 : MonoBehaviour
 
             for (int j = 0; j < 5; j++)
             {
-                seq.AppendCallback(() => BulletFire(leftup.transform, (leftup.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(leftmiddle.transform, (leftmiddle.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(leftdown.transform, (leftdown.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(rightup.transform, (rightup.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(rightmiddle.transform, (rightmiddle.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(rightdown.transform, (rightdown.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(middleup.transform, (middleup.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
-                seq.AppendCallback(() => BulletFire(middledown.transform, (middledown.transform.rotation.eulerAngles.z - transform.rotation.eulerAngles.z)*-1));
+                seq.AppendCallback(() => BulletFire(leftup));
+                seq.AppendCallback(() => BulletFire(leftmiddle));
+                seq.AppendCallback(() => BulletFire(leftdown));
+                seq.AppendCallback(() => BulletFire(rightup));
+                seq.AppendCallback(() => BulletFire(rightmiddle));
+                seq.AppendCallback(() => BulletFire(rightdown));
+                seq.AppendCallback(() => BulletFire(middleup));
+                seq.AppendCallback(() => BulletFire(middledown));
                 seq.AppendInterval(0.2f);
 
             }
 
             seq.AppendInterval(1f);
         }
+
         seq.Append(transform.DORotate(Vector3.zero, 0.42f));
+        for (int i = 0; i < 2; i++)
+        {
+            seq.AppendCallback(() => StartCoroutine(CreateWarning(transform.position, new Vector2(55, 30), Vector3.zero, 0.3f)));
+            
+            seq.AppendInterval(1f);
+            
+            for (int j = 0; j < 5; j++)
+            {
+                seq.AppendCallback(() => BulletFire(leftup));
+                seq.AppendCallback(() => BulletFire(leftmiddle));
+                seq.AppendCallback(() => BulletFire(leftdown));
+                seq.AppendCallback(() => BulletFire(rightup));
+                seq.AppendCallback(() => BulletFire(rightmiddle));
+                seq.AppendCallback(() => BulletFire(rightdown));
+                seq.AppendCallback(() => BulletFire(middleup));
+                seq.AppendCallback(() => BulletFire(middledown));
+                seq.AppendInterval(0.2f);
+            }
+        }
+
+        seq.AppendInterval(2f);
+        seq.AppendCallback(() => _isBounce = false);
+        seq.Append(transform.DOScale(new Vector3(0, 0, 0), 0.5f));
     }
 
-    private void BulletFire(Transform position, float rotation)
+    private void BulletFire(GameObject firePos)
     {
-        GameObject a = PoolManager.Instance.Pop(_bullet, position.position, Quaternion.Euler(0, 0, rotation));
-        print(a.transform.rotation);
+        Vector2 dir = new Vector2(firePos.transform.position.x - transform.position.x, firePos.transform.position.y - transform.position.y);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        GameObject a = PoolManager.Instance.Pop(_bullet, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
     }
 
     IEnumerator ChromeBounce()
     {
         while (_isBounce)
         {
-            transform.DOScale(new Vector3(0.7f, 0.7f, 0.7f), 0.8f);
+            transform.DOScale(new Vector3(1.7f, 1.7f, 1.7f), 0.8f);
             yield return new WaitForSeconds(0.21f);
-            transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.5f);
+            transform.DOScale(new Vector3(2.2f, 2.2f, 2.2f), 0.5f);
             yield return new WaitForSeconds(0.21f);
         }
     }
