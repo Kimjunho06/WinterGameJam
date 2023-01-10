@@ -27,13 +27,14 @@ public class Explain : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if(nowIndex != 0)
-                SceneManager.LoadScene(nowIndex);
+            if (nowIndex != 0)
+                GameManager.Instance.Change(nowIndex, SelectManager.Instance.images[PlayerPrefs.GetInt("ColorIndex",0)].color);
             else
             {
                 StageManager.Instance.CilckDevelopingStage();
-                Debug.Log("일시정지!");
             }
         }
     }
+
+    
 }
