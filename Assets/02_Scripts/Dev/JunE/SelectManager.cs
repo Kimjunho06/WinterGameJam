@@ -47,15 +47,7 @@ public class SelectManager : MonoBehaviour
         text.text = $"보유 캐: {PlayerPrefs.GetInt("KaeJewel", 0)}";
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            PlayerPrefs.SetInt("KaeJewel",PlayerPrefs.GetInt("KaeJewel") + 200);
-            UpdateKae();
-        }
-    }
-    public void UpdateBool()//얘를 SelectManager로
+    public void UpdateBool()
     {
         for(int index = 0; index < parent.transform.childCount; index++)
         {

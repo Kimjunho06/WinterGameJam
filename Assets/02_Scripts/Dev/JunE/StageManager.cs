@@ -38,24 +38,19 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.R))
-            PlayerPrefs.SetInt("ClearStage", 2);
-    }
-
     public void CilckDevelopingStage()
     {
+        if(!developingText.gameObject.activeSelf)
         StartCoroutine(DofadeText(developingText));
     }
 
     IEnumerator DofadeText(TextMeshProUGUI text)
     {
-        developingText.gameObject.SetActive(true);
+        text.gameObject.SetActive(true);
         Sequence seq = DOTween.Sequence();
-        seq.Append(developingText.DOFade(1,0.6f));
-        seq.Append(developingText.DOFade(0,0.6f));
+        seq.Append(text.DOFade(1,0.6f));
+        seq.Append(text.DOFade(0,0.6f));
         yield return new WaitForSeconds(1.2f);
-        developingText.gameObject.SetActive(false);
+        text.gameObject.SetActive(false);
     }
 }

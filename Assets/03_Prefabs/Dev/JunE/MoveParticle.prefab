@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8699611410036480788}
   - component: {fileID: 8699611410036480789}
   - component: {fileID: 8699611410036480790}
+  - component: {fileID: -7388957313012175482}
   m_Layer: 0
   m_Name: MoveParticle
   m_TagString: Untagged
@@ -4804,3 +4805,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-7388957313012175482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699611410036480791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c910a00e0a4e29642b7c772dabcb161c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.4
