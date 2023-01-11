@@ -42,7 +42,7 @@ public class Pattern3 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2, 2), 0.2f));
-        seq.AppendInterval(1f);
+        seq.AppendInterval(0.2f);
 
         seq.AppendCallback(() => _isBounce = true);
 

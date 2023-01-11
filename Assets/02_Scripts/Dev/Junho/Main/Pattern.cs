@@ -21,11 +21,15 @@ public class Pattern : MonoBehaviour
         _isOne = false;
     }
 
+    private void Start()
+    {
+        PatternProcess();
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButton(1) && !_isOne)
+        if (Input.GetMouseButton(0) && !_isOne)
         {
-            PatternProcess();
             _isOne = true;
         }
     }
@@ -34,10 +38,11 @@ public class Pattern : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
 
+        seq.AppendInterval(6f);
         seq.AppendCallback(() => _pattern1.Pattern1Process());
-        seq.AppendInterval(10f);
+        seq.AppendInterval(7.5f);
         seq.AppendCallback(() => _pattern2.Pattern2Process());
-        seq.AppendInterval(10f);
+        seq.AppendInterval(16f);//여기까지 함
         seq.AppendCallback(() => _pattern3.Pattern3Process());
         seq.AppendInterval(10f);
         seq.AppendCallback(() => _pattern4.Pattern4Process());
