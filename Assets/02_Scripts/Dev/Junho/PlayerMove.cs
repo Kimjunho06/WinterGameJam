@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !_isDash)
         {
             StartCoroutine(DashDelay());
-        }
+        }   
     }
 
     private void MoveToMouse()

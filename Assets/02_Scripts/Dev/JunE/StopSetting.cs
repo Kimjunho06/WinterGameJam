@@ -41,7 +41,8 @@ public class StopSetting : MonoBehaviour
 
     private void OnDisable()
     {
-        BGMSource.UnPause();
+        if(BGMSource!= null)
+            BGMSource.UnPause();
         Time.timeScale = 1;
         playerMove.cantMove = false;
     }

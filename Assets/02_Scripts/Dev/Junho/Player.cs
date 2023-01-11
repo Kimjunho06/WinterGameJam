@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -19,16 +20,24 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pattern"))
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    private void Die()
+    IEnumerator Die()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         audioSource.Pause();
         playerMove.cantMove = true;
-        ParticleSystem particle = PoolManager.Instance.Pop(Dieparticle,transform.position,Quaternion.identity).GetComponent<ParticleSystem>();
-        particle.startColor = transform.GetComponent<SpriteRenderer>().color;
+        for(int j = 0; j < 11; j++)
+        {
+            for(int i = 0; i < 5; i++)
+            {
+                SpriteRenderer particle = PoolManager.Instance.Pop(Dieparticle,transform.position,Quaternion.Euler(0,0,Random.Range(0,360))).GetComponent<SpriteRenderer>();
+                particle.color = transform.GetComponent<SpriteRenderer>().color;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+        SceneManager.LoadScene(GameManager.Instance.stageIndex);
     }
 }
