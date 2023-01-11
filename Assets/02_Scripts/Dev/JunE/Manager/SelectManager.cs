@@ -14,6 +14,7 @@ public class SelectManager : MonoBehaviour
     List<int> price = new List<int>();
 
     [SerializeField] TextMeshProUGUI text;
+    BlackSkinPrice blackSkinPrice;
     //public int NowIndex;
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class SelectManager : MonoBehaviour
     private void Start()
     {
         images = parent.GetComponentsInChildren<Image>();
-        for (int i = 0; i < parent.transform.childCount; i++)
+        for (int i = 0; i < parent.transform.childCount - 1; i++)
         {
             price.Add(parent.transform.GetChild(i).GetComponent<SkinPrice>().price);
         }
@@ -49,24 +50,35 @@ public class SelectManager : MonoBehaviour
 
     public void UpdateBool()
     {
-        for(int index = 0; index < parent.transform.childCount; index++)
+        blackSkinPrice = GameObject.FindObjectOfType<BlackSkinPrice>();
+        for (int index = 0; index < parent.transform.childCount - 1; index++)
         {
-            bool isBuy = (PlayerPrefs.GetString($"{index}","사야댐") == "삼")? true : false;
-            if(isBuy)
+            bool isBuy = (PlayerPrefs.GetString($"{index}", "사야댐") == "삼") ? true : false;
+            if (isBuy)
             {
                 parent.transform.GetChild(index).GetComponent<SkinPrice>().priceTxt.text = $"구매";
-                if(PlayerPrefs.GetInt("ColorIndex",0) == index)
+                if (PlayerPrefs.GetInt("ColorIndex", 0) == index)
                     parent.transform.GetChild(index).GetComponent<SkinPrice>().priceTxt.text = $"선택";
             }
             else
                 parent.transform.GetChild(index).GetComponent<SkinPrice>().priceTxt.text
                  = $"{parent.transform.GetChild(index).GetComponent<SkinPrice>().price}캐";
         }
+        bool blackBuy = (PlayerPrefs.GetString($"{parent.transform.childCount - 1}", "사야댐") == "삼") ? true : false;
+        if (blackBuy)
+        {
+            blackSkinPrice.priceTxt.text = $"구매";
+            if (PlayerPrefs.GetInt("ColorIndex", 0) == parent.transform.childCount - 1)
+                blackSkinPrice.priceTxt.text = $"선택";
+        }
+        else
+            blackSkinPrice.priceTxt.text
+             = $"{blackSkinPrice.price}캐";
     }
 
     public bool IsBuy(int index)
     {
-        if((PlayerPrefs.GetString($"{index}","사야댐") == "삼")? true : false)
+        if ((PlayerPrefs.GetString($"{index}", "사야댐") == "삼") ? true : false)
             return true;
         return false;
     }

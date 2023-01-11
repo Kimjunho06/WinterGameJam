@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !_isDash)
         {
             StartCoroutine(DashDelay());
-        }   
+        }
     }
 
     private void MoveToMouse()
@@ -73,7 +73,14 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, mousePos, Time.deltaTime * speed);
             ParticleSystem particleSystem = PoolManager.Instance.Pop(moveParticle, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
-            particleSystem.startColor = transform.GetComponent<SpriteRenderer>().color;
+            if (transform.GetComponent<SpriteRenderer>().color == Color.black)
+            {
+                particleSystem.startColor = new Color(0.16f,0.16f,0.15f,1);
+            }
+            else
+            {
+                particleSystem.startColor = transform.GetComponent<SpriteRenderer>().color;
+            }
         }
     }
 
@@ -83,7 +90,14 @@ public class PlayerMove : MonoBehaviour
         _isDash = true;
         bxCol.enabled = false;
         SpriteRenderer spriteRenderer = PoolManager.Instance.Pop(dashParticle, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
-        spriteRenderer.color = transform.GetComponent<SpriteRenderer>().color;
+        if (transform.GetComponent<SpriteRenderer>().color == Color.black)
+        {
+            spriteRenderer.color = new Color(0.16f,0.16f,0.15f,1);
+        }
+        else
+        {
+            spriteRenderer.color = transform.GetComponent<SpriteRenderer>().color;
+        }
 
         transform.position = Vector3.MoveTowards(transform.position, mousePos, Time.deltaTime * speed);
         bxCol.enabled = true;
