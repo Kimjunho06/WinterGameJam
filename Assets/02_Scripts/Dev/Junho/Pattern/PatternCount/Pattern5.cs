@@ -25,7 +25,7 @@ public class Pattern5 : MonoBehaviour
         }
     }
 
-    private void Pattern5Process()
+    public void Pattern5Process()
     {
         Sequence seq = DOTween.Sequence();
 

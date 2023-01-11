@@ -19,9 +19,7 @@ public class PlayerMove : MonoBehaviour
     private Vector3 mousePos;
     private BoxCollider2D bxCol;
 
-    public bool cantMove = false;
-
-    [SerializeField] GameObject OptionPanel;
+    public bool _isMoveLimit = false;
 
     private void Awake()
     {
@@ -36,17 +34,16 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        if(cantMove)
-            return;
-        
         MoveToMouse();
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
-
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (!_isMoveLimit)
         {
-            OptionPanel.SetActive(true);
-            
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
         }
+        else
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -13.3f, 9f));
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && !_isDash)
         {
             StartCoroutine(DashDelay());
