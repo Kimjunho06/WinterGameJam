@@ -29,15 +29,22 @@ public class Player : MonoBehaviour
         Time.timeScale = 1;
         audioSource.Pause();
         playerMove.cantMove = true;
-        for(int j = 0; j < 11; j++)
+        for (int j = 0; j < 11; j++)
         {
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
-                SpriteRenderer particle = PoolManager.Instance.Pop(Dieparticle,transform.position,Quaternion.Euler(0,0,Random.Range(0,360))).GetComponent<SpriteRenderer>();
-                particle.color = transform.GetComponent<SpriteRenderer>().color;
+                SpriteRenderer particle = PoolManager.Instance.Pop(Dieparticle, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360))).GetComponent<SpriteRenderer>();
+                if (transform.GetComponent<SpriteRenderer>().color == Color.black)
+                {
+                    particle.color = new Color(0.16f,0.16f,0.15f,1);
+                }
+                else
+                {
+                    particle.color = transform.GetComponent<SpriteRenderer>().color;
+                }
             }
             yield return new WaitForSeconds(0.1f);
         }
-        SceneManager.LoadScene(GameManager.Instance.stageIndex);
+        GameManager.Instance.Change(GameManager.Instance.stageIndex, transform.GetComponent<SpriteRenderer>().color);
     }
 }

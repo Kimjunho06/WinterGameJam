@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dea48cce4b2da4292fbb0d51cd75d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 3
+  audioSource: {fileID: 0}
+  Dieparticle: {fileID: 2110781464770837493, guid: 02bae05be1ce9124e9b2970234172bfe, type: 3}
+  GameOverPanel: {fileID: 0}
 --- !u!114 &138600625058571385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +203,8 @@ MonoBehaviour:
   moveParticle: {fileID: 8699611410036480791, guid: dc56c6043d70f6f4daa5c94b143f86de, type: 3}
   dashParticle: {fileID: 2110781464770837493, guid: 02bae05be1ce9124e9b2970234172bfe, type: 3}
   _isMoveLimit: 0
+  cantMove: 0
+  OptionPanel: {fileID: 0}
 --- !u!61 &138600625058571386
 BoxCollider2D:
   m_ObjectHideFlags: 0

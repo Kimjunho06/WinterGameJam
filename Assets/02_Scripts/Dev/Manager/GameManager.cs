@@ -36,5 +36,9 @@ public class GameManager : MonoBehaviour
         }
         SpriteRenderer player = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         player.color = color;
+        if(color == Color.black)
+        {
+            player.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 }

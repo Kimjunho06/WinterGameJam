@@ -1447,6 +1447,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1531209337}
     m_Modifications:
+    - target: {fileID: 3833108800347188600, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2061864926}
+    - target: {fileID: 3833108800347188600, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833108800347188600, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BlackSkinPrice, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4625414619569891056, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1555,7 +1567,8 @@ PrefabInstance:
       propertyPath: TribeKae
       value: 
       objectReference: {fileID: 137677998}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9155999248726615501, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
 --- !u!224 &329833603 stripped
 RectTransform:
@@ -2653,7 +2666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859735346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8089,6 +8102,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906276841}
   m_CullTransparentMesh: 1
+--- !u!114 &1908794369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7318926651455980294, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
+  m_PrefabInstance: {fileID: 329833602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1927445067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8348,6 +8372,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034753379}
   m_CullTransparentMesh: 1
+--- !u!1 &2061864925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4625414619569891057, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
+  m_PrefabInstance: {fileID: 329833602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2061864926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061864925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44d1025935feeb42b6b4c097b01104f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  priceTxt: {fileID: 1908794369}
+  index: 9
+  TribeKae: {fileID: 137677998}
+  selectSource: {fileID: 329833604}
 --- !u!1 &2146475011
 GameObject:
   m_ObjectHideFlags: 0
