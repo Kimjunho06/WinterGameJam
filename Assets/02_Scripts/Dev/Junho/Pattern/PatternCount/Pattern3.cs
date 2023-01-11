@@ -41,12 +41,12 @@ public class Pattern3 : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(transform.DOScale(new Vector2(2, 2), 0.2f));
+        seq.Append(transform.DOScale(new Vector2(2, 2), 0.1f));
         seq.AppendInterval(0.1f);
 
         seq.AppendCallback(() => _isBounce = true);
 
-        seq.AppendInterval(0.1f);
+        seq.AppendInterval(0.3f);
 
         seq.AppendCallback(RotateChrome);
         
@@ -87,7 +87,7 @@ public class Pattern3 : MonoBehaviour
         {
             seq.AppendCallback(() => StartCoroutine(CreateWarning(transform.position, new Vector2(55, 30), Vector3.zero, 0.2f)));
             
-            seq.AppendInterval(0.85f);
+            seq.AppendInterval(1f);
             
             for (int j = 0; j < 4; j++)
             {
