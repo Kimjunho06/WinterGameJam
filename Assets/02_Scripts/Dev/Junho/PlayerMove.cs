@@ -21,6 +21,10 @@ public class PlayerMove : MonoBehaviour
 
     public bool _isMoveLimit = false;
 
+    public bool cantMove = false;
+
+    [SerializeField] GameObject OptionPanel;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -34,6 +38,15 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        if (cantMove)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OptionPanel.SetActive(true);
+
+        }
+
         MoveToMouse();
         if (!_isMoveLimit)
         {
