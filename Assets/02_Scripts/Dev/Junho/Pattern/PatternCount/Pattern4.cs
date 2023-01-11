@@ -28,7 +28,7 @@ public class Pattern4 : MonoBehaviour
         seq.AppendCallback(RandomLaser);
         seq.AppendCallback(RandomLaser);
 
-        seq.AppendInterval(0.5f);
+        seq.AppendInterval(5f);
 
         seq.Append(transform.DOMove(new Vector2(0, 30), 0.5f));
     }
