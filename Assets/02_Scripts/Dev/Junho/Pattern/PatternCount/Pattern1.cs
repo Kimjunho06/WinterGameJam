@@ -26,14 +26,13 @@ public class Pattern1 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(0, 9), new Vector2(19, 10),0.3f)));
-        seq.AppendInterval(0.6f);
+        seq.AppendInterval(0.4f);
         seq.Append(transform.DOMove(new Vector3(0, 9, 0), 0.8f)); // 여기까지 크롬 내려오는 과정
         seq.AppendCallback(() => StartCoroutine(ChromeBounce()));
         
-        seq.AppendInterval(0.05f);
 
         seq.AppendCallback(RepeatHorizontalLaser);
-        seq.AppendInterval(3.3f); // 가로 패턴 끝날 떄 까지 대기 초
+        seq.AppendInterval(3.4f); // 가로 패턴 끝날 떄 까지 대기 초
         
         seq.AppendCallback(() => 
         {

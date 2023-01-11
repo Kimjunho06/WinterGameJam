@@ -42,11 +42,11 @@ public class Pattern3 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2, 2), 0.2f));
-        seq.AppendInterval(0.2f);
+        seq.AppendInterval(0.1f);
 
         seq.AppendCallback(() => _isBounce = true);
 
-        seq.AppendInterval(0.5f);
+        seq.AppendInterval(0.1f);
 
         seq.AppendCallback(RotateChrome);
         
@@ -56,14 +56,14 @@ public class Pattern3 : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 2; i++)
         {
             int rand = Random.Range(-90, 90);
 
-            seq.Append(transform.DORotate(new Vector3(0, 0, rand), 0.42f));
-            seq.AppendCallback(() => StartCoroutine(CreateWarning(transform.position, new Vector2(55, 30), Vector3.zero, 0.3f)));
+            seq.Append(transform.DORotate(new Vector3(0, 0, rand), 0.2f));
+            seq.AppendCallback(() => StartCoroutine(CreateWarning(transform.position, new Vector2(55, 30), Vector3.zero, 0.2f)));
 
-            seq.AppendInterval(1f);
+            seq.AppendInterval(0.8f);
 
             for (int j = 0; j < 5; j++)
             {
@@ -75,21 +75,21 @@ public class Pattern3 : MonoBehaviour
                 seq.AppendCallback(() => BulletFire(rightdown));
                 seq.AppendCallback(() => BulletFire(middleup));
                 seq.AppendCallback(() => BulletFire(middledown));
-                seq.AppendInterval(0.2f);
+                seq.AppendInterval(0.08f);
 
             }
 
-            seq.AppendInterval(1f);
+            seq.AppendInterval(0.34f);
         }
 
-        seq.Append(transform.DORotate(Vector3.zero, 0.42f));
+        seq.Append(transform.DORotate(Vector3.zero, 0.2f));
         for (int i = 0; i < 2; i++)
         {
-            seq.AppendCallback(() => StartCoroutine(CreateWarning(transform.position, new Vector2(55, 30), Vector3.zero, 0.3f)));
+            seq.AppendCallback(() => StartCoroutine(CreateWarning(transform.position, new Vector2(55, 30), Vector3.zero, 0.2f)));
             
-            seq.AppendInterval(1f);
+            seq.AppendInterval(0.85f);
             
-            for (int j = 0; j < 5; j++)
+            for (int j = 0; j < 4; j++)
             {
                 seq.AppendCallback(() => BulletFire(leftup));
                 seq.AppendCallback(() => BulletFire(leftmiddle));
@@ -103,9 +103,9 @@ public class Pattern3 : MonoBehaviour
             }
         }
 
-        seq.AppendInterval(2f);
+        seq.AppendInterval(0.1f);
         seq.AppendCallback(() => _isBounce = false);
-        seq.Append(transform.DOScale(new Vector3(0, 0, 0), 0.5f));
+        seq.Append(transform.DOScale(new Vector3(0, 0, 0), 0.1f));
     }
 
     private void BulletFire(GameObject firePos)

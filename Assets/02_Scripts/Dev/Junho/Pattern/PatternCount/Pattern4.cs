@@ -20,7 +20,7 @@ public class Pattern4 : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
         
-        seq.Append(transform.DOMove(new Vector2(0, 0), 0.5f));
+        seq.Append(transform.DOMove(new Vector2(0, 0), 0.3f));
 
         seq.AppendInterval(0.5f);
 
