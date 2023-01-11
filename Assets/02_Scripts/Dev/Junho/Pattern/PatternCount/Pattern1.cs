@@ -12,12 +12,12 @@ public class Pattern1 : MonoBehaviour
 
     private void Start()
     {
-        ChromeMove();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            ChromeMove();
         }
     }
 

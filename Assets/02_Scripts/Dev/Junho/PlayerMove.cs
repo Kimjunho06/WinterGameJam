@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
         MoveToMouse();
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26),Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !_isDash)
+        if (Input.GetKeyDown(KeyCode.Space) && !_isDash)
         {
             StartCoroutine(DashDelay());
         }
