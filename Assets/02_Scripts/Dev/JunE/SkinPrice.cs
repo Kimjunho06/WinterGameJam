@@ -9,7 +9,7 @@ public class SkinPrice : MonoBehaviour
     public TextMeshProUGUI priceTxt;
     [SerializeField] int index;
     [SerializeField] TextMeshProUGUI TribeKae;
-    //private bool isBuy = false;
+    [SerializeField] AudioSource selectSource;
 
     private void OnEnable()
     {
@@ -21,12 +21,14 @@ public class SkinPrice : MonoBehaviour
         if (SelectManager.Instance.IsBuy(index))
         {
             PlayerPrefs.SetInt("ColorIndex", index);
+            selectSource.Play();
             SelectManager.Instance.UpdateBool();
         }
         else
         {
             if (PlayerPrefs.GetInt("KaeJewel", 0) >= 200)
             {
+                BuyClip.Instance.PlaySound();
                 PlayerPrefs.SetInt("KaeJewel", PlayerPrefs.GetInt("KaeJewel", 0) - 200);
                 SelectManager.Instance.UpdateKae();
                 PlayerPrefs.SetString($"{index}", "삼");
@@ -36,6 +38,7 @@ public class SkinPrice : MonoBehaviour
             {
                 if (!TribeKae.gameObject.activeSelf)
                     StartCoroutine(DofadeText(TribeKae));
+                SkinSound.Instance.PlaySound();
             }
         }
     }

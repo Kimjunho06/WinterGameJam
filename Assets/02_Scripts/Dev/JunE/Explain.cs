@@ -14,6 +14,8 @@ public class Explain : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeTxt;
 
     [SerializeField] GameObject developingText;
+
+    [SerializeField] AudioSource errorSource;
     public void UpdateExplain(int level, Sprite image, string name, string levelS, string time)
     {
         nowIndex = level;
@@ -25,12 +27,13 @@ public class Explain : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (nowIndex != 0)
                 GameManager.Instance.Change(nowIndex, SelectManager.Instance.images[PlayerPrefs.GetInt("ColorIndex",0)].color);
             else
             {
+                errorSource.Play();
                 StageManager.Instance.CilckDevelopingStage();
             }
         }
