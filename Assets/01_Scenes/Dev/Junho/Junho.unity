@@ -322,6 +322,8 @@ MonoBehaviour:
   - {fileID: 1379361583490014456, guid: 02e1de8cfb9c9764bbb32c7a4e66ce72, type: 3}
   - {fileID: 6315169217684005099, guid: f23c3d1d608737049b8264ff7de7fd93, type: 3}
   - {fileID: 6315169217684005099, guid: adbddbe36f3b31744986a4500acfa4c7, type: 3}
+  - {fileID: 2110781464770837493, guid: 02bae05be1ce9124e9b2970234172bfe, type: 3}
+  - {fileID: 8699611410036480791, guid: dc56c6043d70f6f4daa5c94b143f86de, type: 3}
 --- !u!4 &770469394
 Transform:
   m_ObjectHideFlags: 0
@@ -617,6 +619,14 @@ PrefabInstance:
       propertyPath: _dashDelay
       value: 0.38
       objectReference: {fileID: 0}
+    - target: {fileID: 138600625058571385, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: dashParticle
+      value: 
+      objectReference: {fileID: 2110781464770837493, guid: 02bae05be1ce9124e9b2970234172bfe, type: 3}
+    - target: {fileID: 138600625058571385, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: moveParticle
+      value: 
+      objectReference: {fileID: 8699611410036480791, guid: dc56c6043d70f6f4daa5c94b143f86de, type: 3}
     - target: {fileID: 138600625058571390, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
       propertyPath: m_Name
       value: Player
@@ -630,6 +640,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 450343442181832573, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
+      propertyPath: m_TagString
+      value: Pattern
+      objectReference: {fileID: 0}
+    - target: {fileID: 450343442465383540, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
+      propertyPath: m_TagString
+      value: Pattern
+      objectReference: {fileID: 0}
     - target: {fileID: 450343442557309879, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0
@@ -689,6 +707,14 @@ PrefabInstance:
     - target: {fileID: 450343442644705389, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450343442878898600, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
+      propertyPath: m_TagString
+      value: Pattern
+      objectReference: {fileID: 0}
+    - target: {fileID: 450343443624105547, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
+      propertyPath: m_TagString
+      value: Pattern
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939d585fe239b0246ad0bd2b298cb3c5, type: 3}
