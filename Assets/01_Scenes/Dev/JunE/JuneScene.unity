@@ -278,7 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af45d256d33fa240aa35a195281bac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionPanel: {fileID: 1381153557}
+  maxStage: 0
+  stageIndex: 0
 --- !u!4 &132149324
 Transform:
   m_ObjectHideFlags: 0
@@ -534,7 +535,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6e163f40569554091d68e55dfc7c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  defalutSpeed: 9
+  dashSpeed: 0
+  _dashDelay: 0
+  _isDash: 0
+  moveParticle: {fileID: 0}
+  dashParticle: {fileID: 0}
 --- !u!1 &814305780
 GameObject:
   m_ObjectHideFlags: 0
