@@ -8,8 +8,16 @@ public class StopSetting : MonoBehaviour
     [SerializeField] AudioSource BGMSource;
     [SerializeField] GameObject SettingPanel;
 
+    PlayerMove playerMove;
+
+    private void Awake()
+    {
+        playerMove = GameObject.FindObjectOfType<PlayerMove>();
+    }
+
     private void OnEnable()
     {
+        playerMove.cantMove = true;
         BGMSource.Pause();
         Time.timeScale = 0;
     }
@@ -33,7 +41,9 @@ public class StopSetting : MonoBehaviour
 
     private void OnDisable()
     {
-        BGMSource.UnPause();
+        if(BGMSource!= null)
+            BGMSource.UnPause();
         Time.timeScale = 1;
+        playerMove.cantMove = false;
     }
 }

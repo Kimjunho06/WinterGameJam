@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/Main/Intro.unity
     guid: 3f4e1ae56f030604cac2a6b143261c65
+  - enabled: 1
+    path: Assets/01_Scenes/Dev/Junho/Junho.unity
+    guid: d1c2e28a8bdf83f4b97d1592744714fa
   m_configObjects: {}
