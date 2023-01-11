@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject Dieparticle;
 
     [SerializeField] GameObject GameOverPanel;
+    [SerializeField] AudioSource DieAudio;
     private void Awake()
     {
         playerMove = FindObjectOfType<PlayerMove>();
@@ -28,8 +28,10 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 1;
         audioSource.Pause();
+        DieAudio.Play();
         playerMove.cantMove = true;
-        for (int j = 0; j < 11; j++)
+        CameraManager.Instance.ScaleCam(-5f,0.5f);
+        for (int j = 0; j < 5; j++)
         {
             for (int i = 0; i < 5; i++)
             {

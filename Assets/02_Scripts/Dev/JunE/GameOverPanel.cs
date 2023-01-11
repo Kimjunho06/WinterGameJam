@@ -18,10 +18,13 @@ public class GameOverPanel : MonoBehaviour
     [SerializeField] string ContextB;
     [SerializeField] string ContextC;
 
+    [SerializeField] AudioSource clickAudio;
+
     int selectIndex = 0;
 
     private void OnEnable()
     {
+        Time.timeScale = 0;
         collectKae.text = $"얻은 캐: {PlayerPrefs.GetInt("KaeCollect", 0)}";
     }
     public void CheckButton()
@@ -63,20 +66,28 @@ public class GameOverPanel : MonoBehaviour
 
     private void Update()
     {
-        if (showContext.text == ContextA)
+        if (selectIndex != 0 && showContext.text == ContextA)
         {
+            clickAudio.Play();
             explainTxt.text = "로비 화면으로 돌아갑니다.";
             selectIndex = 0;
         }
-        else if (showContext.text == ContextB)
+        else if (selectIndex != 1 && showContext.text == ContextB)
         {
+            clickAudio.Play();
             explainTxt.text = "현재 스테이지를 다시 플레이합니다.";
             selectIndex = 1;
         }
-        else
+        else if (selectIndex != 2 && showContext.text == ContextC)
         {
+            clickAudio.Play();
             explainTxt.text = "다음 스테이지를 플레이합니다.";
             selectIndex = 2;
         }
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 1;
     }
 }
