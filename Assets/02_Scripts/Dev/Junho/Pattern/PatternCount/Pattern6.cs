@@ -72,7 +72,7 @@ public class Pattern6 : MonoBehaviour
             seq.AppendCallback(() => XBoxMove(_XboxImage2, new Vector2(33, -10), 0.3f));
             seq.AppendInterval(0.5f);
 
-            seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(-20.5f, 0), new Vector2(12.5f, 30f), 0.2f)));
+            seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(-20.5f, 0), new Vector2(12f, 30f), 0.2f)));
             seq.AppendInterval(0.4f);
             seq.AppendCallback(() => XBoxMove(_XboxImage1, new Vector2(-20.5f, -24), 0.3f));
             seq.AppendInterval(0.5f);

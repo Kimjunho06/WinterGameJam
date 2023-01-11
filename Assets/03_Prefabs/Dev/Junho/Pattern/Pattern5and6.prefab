@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 450343442181832574}
   m_Layer: 0
   m_Name: GameBoxImage_3
-  m_TagString: Untagged
+  m_TagString: Pattern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 450343442465383541}
   m_Layer: 0
   m_Name: GameBoxImage
-  m_TagString: Untagged
+  m_TagString: Pattern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 450343442557309878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 450343442465383542}
   - {fileID: 450343442878898602}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450343442644705389}
   m_Layer: 0
-  m_Name: Pattern5
+  m_Name: Pattern5and6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 450343442878898601}
   m_Layer: 0
   m_Name: GameBoxImage_2
-  m_TagString: Untagged
+  m_TagString: Pattern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 450343443624105548}
   m_Layer: 0
   m_Name: GameBoxImage_4
-  m_TagString: Untagged
+  m_TagString: Pattern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
