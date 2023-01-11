@@ -14,6 +14,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject GamePower;
     [SerializeField] GameObject SettingPanel;
 
+    [SerializeField] AudioSource audioSource;
+
     private bool isCo = false;
     public bool isMax = false;
     private bool isOnPower = false;
@@ -31,8 +33,13 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
+    public void SoundListen()
+    {
+        audioSource.Play();
+    }
     public void WindowKey()
     {
+        SoundListen();
         if (!StartPanel.activeSelf)
         {
             StartPanel.SetActive(true);
@@ -49,6 +56,7 @@ public class ButtonManager : MonoBehaviour
 
     public void StartKey()
     {
+        SoundListen();
         if (!isCo)
             if (!StageSelcetPanel.activeSelf)
             {
@@ -82,6 +90,7 @@ public class ButtonManager : MonoBehaviour
 
     public void XButton()
     {
+        SoundListen();
         ExplainPanel.SetActive(false);
         ExplainPanel.transform.localScale = new Vector3(0, 0, 1);
 
@@ -90,6 +99,7 @@ public class ButtonManager : MonoBehaviour
 
     public void MaxButton()
     {
+        SoundListen();
         if (!isMax)
         {
             ExplainPanel.transform.DOMove(new Vector3(960, 540, 0), 0.05f);
@@ -106,12 +116,14 @@ public class ButtonManager : MonoBehaviour
 
     public void MinButton()
     {
+        SoundListen();
         ExplainPanel.transform.DOMove(new Vector3(500, 50, 0), 0.3f);
         ExplainPanel.transform.DOScale(new Vector3(0, 0, 1), 0.4f);
     }
 
     public void ClickPower()
     {
+        SoundListen();
         if (isOnPower)
         {
             GamePower.SetActive(false);
@@ -133,11 +145,12 @@ public class ButtonManager : MonoBehaviour
 
     public void ClickSetting()
     {
-        if(!SettingPanel.activeSelf)
+        SoundListen();
+        if (!SettingPanel.activeSelf)
         {
-            StartPanel.transform.DOScaleX(0f, 0.05f);
-            StartPanel.transform.DOScaleY(0f, 0.08f);
-            StartPanel.SetActive(false);
+            //StartPanel.transform.DOScaleX(0f, 0.05f);
+            //StartPanel.transform.DOScaleY(0f, 0.08f);
+            //StartPanel.SetActive(false);
 
             SettingPanel.SetActive(true);
         }

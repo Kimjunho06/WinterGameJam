@@ -13,6 +13,9 @@ public class SceneSetting : MonoBehaviour
     [SerializeField] GameObject ExplainPanel;
     public void OnClick()
     {
+        if(Input.GetKey(KeyCode.Space))
+            return;
+        StageManager.Instance.SelectAudio();
         if (!ExplainPanel.activeSelf)
         {
             ExplainPanel.SetActive(true);

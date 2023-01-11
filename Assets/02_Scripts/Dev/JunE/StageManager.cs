@@ -15,6 +15,8 @@ public class StageManager : MonoBehaviour
 
     [SerializeField] GameObject ExplainPanel;
 
+    [SerializeField] AudioSource audioSource;
+
     int MaxClear = 0;
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class StageManager : MonoBehaviour
             Destroy(gameObject);
             Debug.LogError($"{transform} : StageManager Multiple");
         }
-        stageButton = GetComponentsInChildren<Button>();
+        stageButton = GameObject.Find("StageSelectPanel").GetComponentsInChildren<Button>();
     }
     private void Start()
     {
@@ -36,6 +38,11 @@ public class StageManager : MonoBehaviour
         {
             stageButton[i].interactable = true;
         }
+    }
+
+    public void SelectAudio()
+    {
+        audioSource.Play();
     }
 
     public void CilckDevelopingStage()
