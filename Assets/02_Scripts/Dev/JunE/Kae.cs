@@ -9,6 +9,7 @@ public class Kae : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerPrefs.SetInt("KaeJewel",PlayerPrefs.GetInt("KaeJewel") + 1);
+            PlayerPrefs.SetInt("KaeCollect",PlayerPrefs.GetInt("KaeCollect",0) + 1);
             PoolManager.Instance.Push(gameObject);
             KaeSpawnManager.Instance.Spawn();
         }
