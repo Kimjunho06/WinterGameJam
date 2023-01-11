@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
     public float defalutSpeed = 9f;
     public float dashSpeed;
     private float speed = 9f;
+    private float rotSpeed = 5f;
+    private float rot = 0;
 
     public float _dashDelay;
 
@@ -33,6 +35,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("KaeCollect",0);
         speed = defalutSpeed;
     }
 
@@ -68,11 +71,14 @@ public class PlayerMove : MonoBehaviour
         mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos = new Vector3(mousePos.x, mousePos.y, 0);
 
+        transform.rotation = Quaternion.Euler(0,0,rot);
 
         if (Input.GetMouseButton(0))
         {
             transform.position = Vector3.MoveTowards(transform.position, mousePos, Time.deltaTime * speed);
             ParticleSystem particleSystem = PoolManager.Instance.Pop(moveParticle, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+            
+            MoveRotate();
             if (transform.GetComponent<SpriteRenderer>().color == Color.black)
             {
                 particleSystem.startColor = new Color(0.16f,0.16f,0.15f,1);
@@ -82,6 +88,15 @@ public class PlayerMove : MonoBehaviour
                 particleSystem.startColor = transform.GetComponent<SpriteRenderer>().color;
             }
         }
+        else
+        {
+            rot = 0;
+        }
+    }
+
+    public void MoveRotate()
+    {
+        rot += rotSpeed;
     }
 
     IEnumerator DashDelay()

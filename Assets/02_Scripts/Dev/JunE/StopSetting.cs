@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class StopSetting : MonoBehaviour
 {
     [SerializeField] AudioSource BGMSource;
     [SerializeField] GameObject SettingPanel;
+
+    [SerializeField] AudioSource buttonClick;
 
     PlayerMove playerMove;
 
@@ -17,18 +20,20 @@ public class StopSetting : MonoBehaviour
 
     private void OnEnable()
     {
-        playerMove.cantMove = true;
         BGMSource.Pause();
         Time.timeScale = 0;
+        playerMove.cantMove = true;
     }
 
     public void Continue()
     {
-        SettingPanel.gameObject.SetActive(false);
+        buttonClick.Play();
+        StartCoroutine(StartGame());
     }
 
     public void RE()
     {
+        buttonClick.Play();
         Time.timeScale = 1;
         GameManager.Instance.Change(GameManager.Instance.stageIndex, SelectManager.Instance.images[PlayerPrefs.GetInt("ColorIndex",0)].color);
     }
@@ -39,11 +44,14 @@ public class StopSetting : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    private void OnDisable()
+    IEnumerator StartGame()
     {
+        yield return null;
+        Time.timeScale = 1;
+        SettingPanel.transform.DOScale(new Vector3(0f,0f,1f),0.3f);
         if(BGMSource!= null)
             BGMSource.UnPause();
-        Time.timeScale = 1;
+        SettingPanel.gameObject.SetActive(false);
         playerMove.cantMove = false;
     }
 }
