@@ -11,7 +11,9 @@ public class PlayerMove : MonoBehaviour
 
     public float _dashDelay;
 
-    [SerializeField] private bool _isDash = false; 
+    [SerializeField] private bool _isDash = false;
+    [SerializeField] GameObject moveParticle;
+    [SerializeField] GameObject dashParticle;
 
     private Camera mainCamera;
     private Vector3 mousePos;
@@ -31,7 +33,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         MoveToMouse();
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26),Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
 
         if (Input.GetKeyDown(KeyCode.Space) && !_isDash)
         {
@@ -44,10 +46,12 @@ public class PlayerMove : MonoBehaviour
         mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos = new Vector3(mousePos.x, mousePos.y, 0);
 
-        
+
         if (Input.GetMouseButton(0))
         {
             transform.position = Vector3.MoveTowards(transform.position, mousePos, Time.deltaTime * speed);
+            ParticleSystem particleSystem = PoolManager.Instance.Pop(moveParticle, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+            particleSystem.startColor = transform.GetComponent<SpriteRenderer>().color;
         }
     }
 
@@ -56,6 +60,8 @@ public class PlayerMove : MonoBehaviour
         speed = dashSpeed;
         _isDash = true;
         bxCol.enabled = false;
+        SpriteRenderer spriteRenderer = PoolManager.Instance.Pop(dashParticle, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
+        spriteRenderer.color = transform.GetComponent<SpriteRenderer>().color;
 
         transform.position = Vector3.MoveTowards(transform.position, mousePos, Time.deltaTime * speed);
         bxCol.enabled = true;
