@@ -37,7 +37,7 @@ public class Pattern3 : MonoBehaviour
         }
     }
 
-    private void Pattern3Process()
+    public void Pattern3Process()
     {
         Sequence seq = DOTween.Sequence();
 

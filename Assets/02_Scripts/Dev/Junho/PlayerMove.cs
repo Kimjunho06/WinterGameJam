@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour
     private Vector3 mousePos;
     private BoxCollider2D bxCol;
 
+    public bool _isMoveLimit = false;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -33,7 +35,14 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         MoveToMouse();
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
+        if (!_isMoveLimit)
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -14.5f, 14.5f));
+        }
+        else
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -26, 26), Mathf.Clamp(transform.position.y, -13.3f, 9f));
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && !_isDash)
         {

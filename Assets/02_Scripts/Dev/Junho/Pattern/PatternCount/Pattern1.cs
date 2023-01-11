@@ -17,11 +17,11 @@ public class Pattern1 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ChromeMove();
+            Pattern1Process();
         }
     }
 
-    private void ChromeMove() // 메인 과정
+    public void Pattern1Process() // 메인 과정
     {
         Sequence seq = DOTween.Sequence();
 

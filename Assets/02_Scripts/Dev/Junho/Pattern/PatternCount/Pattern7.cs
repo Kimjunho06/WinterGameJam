@@ -23,7 +23,7 @@ public class Pattern7 : MonoBehaviour
     }
     
 
-    private void Pattern7Process()
+    public void Pattern7Process()
     {
         Sequence seq = DOTween.Sequence();
 

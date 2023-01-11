@@ -27,7 +27,7 @@ public class Pattern6 : MonoBehaviour
         }
     }
 
-    private void Pattern6Process()
+    public void Pattern6Process()
     {
         Sequence seq = DOTween.Sequence();
 
