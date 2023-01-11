@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject titleText;
     [SerializeField] GameObject GamePower;
     [SerializeField] GameObject SettingPanel;
+    [SerializeField] GameObject ExplainArrow;
 
     [SerializeField] AudioSource audioSource;
 
@@ -42,6 +43,8 @@ public class ButtonManager : MonoBehaviour
         SoundListen();
         if (!StartPanel.activeSelf)
         {
+            if(ExplainArrow!= null)
+                Destroy(ExplainArrow);
             StartPanel.SetActive(true);
             StartPanel.transform.DOScaleX(1f, 0.05f);
             StartPanel.transform.DOScaleY(1f, 0.08f);

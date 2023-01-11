@@ -13,6 +13,7 @@ public class IntroImage : MonoBehaviour
     }
     void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(Delay());
     }
 
