@@ -11563,6 +11563,10 @@ PrefabInstance:
       value: Image
       objectReference: {fileID: 0}
     - target: {fileID: 9155999248726615501, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
+      propertyPath: price
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155999248726615501, guid: 5644b7e4945ee104497df168b038b11a, type: 3}
       propertyPath: TribeKae
       value: 
       objectReference: {fileID: 137677998}

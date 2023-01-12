@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(PlayerPrefs.GetString($"{0}","200캐") == "200캐")
+        {
+            PlayerPrefs.SetString($"{0}", "삼");
+            PlayerPrefs.SetInt("ColorIndex", 0);
+        }
     }
 
     public void Change(int nowIndex, Color color)

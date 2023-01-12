@@ -30,7 +30,7 @@ public class Explain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (nowIndex != 0)
-                GameManager.Instance.Change(nowIndex, SelectManager.Instance.images[PlayerPrefs.GetInt("ColorIndex",0)].color);
+                GameManager.Instance.Change(nowIndex, SelectManager.Instance.images[PlayerPrefs.GetInt("ColorIndex",1)].color);
             else
             {
                 errorSource.Play();
