@@ -1361,6 +1361,7 @@ MonoBehaviour:
   ContextA: "\uBA54\uC778 \uB85C\uBE44\uB85C"
   ContextB: "\uAC8C\uC784 \uB2E4\uC2DC\uC2DC\uC791"
   ContextC: "\uB2E4\uC74C \uC2A4\uD14C\uC774\uC9C0\uB85C"
+  clickAudio: {fileID: 0}
 --- !u!1 &1293276946355184536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,7 +1772,7 @@ RectTransform:
   m_GameObject: {fileID: 1924305817627619751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1293276946043911588}
   m_RootOrder: 0

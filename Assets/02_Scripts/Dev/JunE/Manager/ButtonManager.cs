@@ -80,7 +80,6 @@ public class ButtonManager : MonoBehaviour
         for(int i = 0; i < titleText.Length; i++)
         {
             titleText[i].transform.DOMoveY(350, 1f);
-            i++;
         }
         stageSelcetPanel.transform.DOMoveY(1080, 1f);
         yield return new WaitForSeconds(1f);
@@ -93,7 +92,6 @@ public class ButtonManager : MonoBehaviour
         for(int i = 0; i < titleText.Length; i++)
         {
             titleText[i].transform.DOMoveY(500, 1f);
-            i++;
         }
         stageSelcetPanel.transform.DOMoveY(1360, 1f);
         yield return new WaitForSeconds(1f);
