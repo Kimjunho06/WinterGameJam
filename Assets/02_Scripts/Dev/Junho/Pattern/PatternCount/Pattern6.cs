@@ -30,7 +30,7 @@ public class Pattern6 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
     
             
-            seq.AppendInterval(0.1f);
+            seq.AppendInterval(0.05f);
             seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(0, 12.15f), new Vector2(21.3f, 5.5f), 0.2f)));
             seq.AppendInterval(0.4f);
             seq.AppendCallback(() => XBoxMove(_XboxImage3, new Vector2(0, 10.5f), 0.3f)); // »ó
@@ -70,13 +70,13 @@ public class Pattern6 : MonoBehaviour
             seq.AppendCallback(() => XBoxMove(_XboxImage2, new Vector2(33, -10), 0.3f));
             seq.AppendInterval(0.8f);
     
-            seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(-21f, 0), new Vector2(12.5f, 30f), 0.2f)));
+            seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(-20.5f, 0), new Vector2(11.5f, 30f), 0.2f)));
             seq.AppendInterval(1.2f);
             seq.AppendCallback(() => XBoxMove(_XboxImage1, new Vector2(-20.5f, -24), 0.3f));
             seq.AppendInterval(0.8f);
     
             seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(0, 6), new Vector2(53f, 11f), 0.2f)));
-            seq.AppendInterval(1.2f);
+            seq.AppendInterval(1.1f);
             seq.AppendCallback(() => XBoxMove(_XboxImage4, new Vector2(-33f, 6), 0.3f));
             
     }

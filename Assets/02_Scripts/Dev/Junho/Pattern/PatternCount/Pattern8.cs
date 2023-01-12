@@ -28,10 +28,16 @@ public class Pattern8 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2.8f, 2.95f), 0.5f));
-        seq.AppendInterval(0.5f);
+        seq.AppendInterval(0.07f);
         seq.AppendCallback(() => _player._isMoveLimit = true);
 
-        CreateRandomLaser();
+        for (int i = 0; i < 56; i++)
+        {
+            seq.AppendCallback(CreateRandomLaser);
+            seq.AppendCallback(CreateRandomLaser);
+            seq.AppendCallback(CreateRandomLaser);
+            seq.AppendInterval(0.4f);
+        }
     }
 
     private void CreateRandomLaser()
@@ -43,7 +49,7 @@ public class Pattern8 : MonoBehaviour
         int randAngle = Random.Range(0, 361);
 
         seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(randX, randY), new Vector2(100, 1), randAngle, 0.2f)));
-        seq.AppendInterval(0.3f);
+        seq.AppendInterval(0.2f);
         seq.AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(randX, randY), new Vector2(100, 1), randAngle)));
     }
 
@@ -51,7 +57,7 @@ public class Pattern8 : MonoBehaviour
     {
         GameObject a = PoolManager.Instance.Pop(_painterLaser, createPos, Quaternion.Euler(new Vector3(0,0,angle)));
         a.transform.localScale = scale;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.25f);
         PoolManager.Instance.Push(a);
     }
 

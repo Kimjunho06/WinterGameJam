@@ -34,17 +34,61 @@ public class Pattern7 : MonoBehaviour
 
         seq.AppendCallback(RandomTwistLaser);
         seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.2f);
         seq.AppendCallback(RandomTwistLaser);
-
-        seq.AppendInterval(1.5f);
-
-        seq.AppendCallback(RandomStraightLaser);
-        seq.AppendCallback(RandomStraightLaser);
-        seq.AppendCallback(RandomStraightLaser);
-        seq.AppendCallback(RandomStraightLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.3f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.5f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.3f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.2f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.2f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.3f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.5f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.3f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.2f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.2f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.3f);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendCallback(RandomTwistLaser);
+        seq.AppendInterval(0.5f);
+        seq.AppendCallback(RandomTwistLaser);
         
+        
+
+
         seq.AppendInterval(1.5f);
 
+        for (int i = 0; i < 56; i++)
+        {
+            seq.AppendCallback(RandomStraightLaser);
+            seq.AppendCallback(RandomStraightLaser);
+            seq.AppendCallback(RandomStraightLaser);
+            seq.AppendInterval(0.4f);
+        }
+
+        seq.AppendInterval(0.5f)
+;
         seq.Append(_chrome.transform.DOMove(new Vector2(-35f, 0), 0.5f));
         seq.Join(_Edge.transform.DOMove(new Vector2(35f, 0), 0.5f));
     }
@@ -55,7 +99,7 @@ public class Pattern7 : MonoBehaviour
         
         int rand = Random.Range(-14, 15);
 
-        seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(0, rand), new Vector2(53, 1), 0.2f)));
+        seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(0, rand), new Vector2(53, 1), 0.15f)));
         seq.AppendInterval(0.3f);
         seq.AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(-16.5f, rand), new Vector2(8, 1), new Vector3(16.5f, rand), 0.5f, _chromeLaser))); // 크롬 레이져 소환
         seq.AppendCallback(() => StartCoroutine(CreateHorizontalLaser(new Vector2(16.5f, rand), new Vector2(8, 1), new Vector3(-16.5f, rand), 0.5f, _EdgeLaser))); // 크롬 레이져 소환

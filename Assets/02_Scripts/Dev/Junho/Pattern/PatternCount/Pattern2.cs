@@ -48,7 +48,7 @@ public class Pattern2 : MonoBehaviour
 
         seq.AppendCallback(() => _horizontalLaser.transform.DOScale(new Vector3(0, 0), 0.1f));
         seq.AppendCallback(() => _verticalLaser.transform.DOScale(new Vector3(0, 0), 0.1f));
-        seq.AppendCallback(() => transform.DOScale(new Vector2(0, 0), 0.1f));
+        seq.Join(transform.DOScale(new Vector2(0, 0), 0.1f));
         print(CurrentTime);
     }
 
