@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject startPanel;
     [SerializeField] GameObject stageSelcetPanel;
     [SerializeField] GameObject explainPanel;
-    [SerializeField] GameObject titleText;
+    [SerializeField] GameObject[] titleText;
     [SerializeField] GameObject gamePower;
     [SerializeField] GameObject settingPanel;
     [SerializeField] GameObject explainArrow;
@@ -77,7 +77,11 @@ public class ButtonManager : MonoBehaviour
     {
         isCo = true;
         stageSelcetPanel.SetActive(true);
-        titleText.transform.DOMoveY(350, 1f);
+        for(int i = 0; i < titleText.Length; i++)
+        {
+            titleText[i].transform.DOMoveY(350, 1f);
+            i++;
+        }
         stageSelcetPanel.transform.DOMoveY(1080, 1f);
         yield return new WaitForSeconds(1f);
         isCo = false;
@@ -86,7 +90,11 @@ public class ButtonManager : MonoBehaviour
     IEnumerator falseStageSelect()
     {
         isCo = true;
-        titleText.transform.DOMoveY(500, 1f);
+        for(int i = 0; i < titleText.Length; i++)
+        {
+            titleText[i].transform.DOMoveY(500, 1f);
+            i++;
+        }
         stageSelcetPanel.transform.DOMoveY(1360, 1f);
         yield return new WaitForSeconds(1f);
         stageSelcetPanel.SetActive(false);
