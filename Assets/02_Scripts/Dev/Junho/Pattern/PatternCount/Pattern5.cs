@@ -40,12 +40,11 @@ public class Pattern5 : MonoBehaviour
         seq.Append(transform.DOScale(new Vector3(0.8f, 0.8f), 0.2f));
         seq.Append(transform.DOScale(new Vector3(1f, 1f), 0.2f));
 
-        seq.AppendInterval(0.5f);
+        seq.AppendInterval(0.2f);
 
         seq.AppendCallback(RepeatFireBullet);
-        seq.AppendInterval(13f);
+        seq.AppendInterval(14f);
         seq.AppendCallback(() => _isBulletOff = true);
-        seq.AppendCallback(() => _isPassPatter6 = true);
 
     }
 
@@ -58,42 +57,71 @@ public class Pattern5 : MonoBehaviour
         seq.AppendCallback(() => BulletFire(_XboxImage3, 90));
         seq.AppendCallback(() => BulletFire(_XboxImage4, 75));
         
-        seq.AppendInterval(2f);
+        seq.AppendInterval(1.7f);
 
         seq.AppendCallback(() => BulletFire(_XboxImage1, 60));
         seq.AppendCallback(() => BulletFire(_XboxImage2, 90));
         seq.AppendCallback(() => BulletFire(_XboxImage3, 75));
         seq.AppendCallback(() => BulletFire(_XboxImage4, 45));
 
-        seq.AppendInterval(2f);
+        seq.AppendInterval(1.7f);
 
         seq.AppendCallback(() => BulletFire(_XboxImage1, 75));
         seq.AppendCallback(() => BulletFire(_XboxImage2, 45));
         seq.AppendCallback(() => BulletFire(_XboxImage3, 60));
         seq.AppendCallback(() => BulletFire(_XboxImage4, 90));
 
-        seq.AppendInterval(2f);
+        seq.AppendInterval(1.7f);
 
         seq.AppendCallback(() => BulletFire(_XboxImage1, 90));
         seq.AppendCallback(() => BulletFire(_XboxImage2, 75));
         seq.AppendCallback(() => BulletFire(_XboxImage3, 45));
         seq.AppendCallback(() => BulletFire(_XboxImage4, 60));
 
-        seq.AppendInterval(2f);
+        seq.AppendInterval(1.7f);
 
         seq.AppendCallback(() => BulletFire(_XboxImage1, 60));
         seq.AppendCallback(() => BulletFire(_XboxImage2, 90));
         seq.AppendCallback(() => BulletFire(_XboxImage3, 75));
         seq.AppendCallback(() => BulletFire(_XboxImage4, 45));
 
-        seq.AppendInterval(2f);
+        seq.AppendInterval(1.7f);
 
         seq.AppendCallback(() => BulletFire(_XboxImage1, 45));
         seq.AppendCallback(() => BulletFire(_XboxImage2, 75));
         seq.AppendCallback(() => BulletFire(_XboxImage3, 90));
         seq.AppendCallback(() => BulletFire(_XboxImage4, 60));
 
-        seq.AppendInterval(2f);
+        seq.AppendInterval(1.7f);
+
+        seq.AppendCallback(() => BulletFire(_XboxImage1, 45));
+        seq.AppendCallback(() => BulletFire(_XboxImage2, 60));
+        seq.AppendCallback(() => BulletFire(_XboxImage3, 90));
+        seq.AppendCallback(() => BulletFire(_XboxImage4, 75));
+
+        seq.AppendInterval(1.7f);
+
+        seq.AppendCallback(() => BulletFire(_XboxImage1, 60));
+        seq.AppendCallback(() => BulletFire(_XboxImage2, 90));
+        seq.AppendCallback(() => BulletFire(_XboxImage3, 75));
+        seq.AppendCallback(() => BulletFire(_XboxImage4, 45));
+
+        seq.AppendInterval(1.7f);
+
+        seq.AppendCallback(() => BulletFire(_XboxImage1, 75));
+        seq.AppendCallback(() => BulletFire(_XboxImage2, 45));
+        seq.AppendCallback(() => BulletFire(_XboxImage3, 60));
+        seq.AppendCallback(() => BulletFire(_XboxImage4, 90));
+
+        seq.AppendInterval(1.7f);
+
+        seq.AppendCallback(() => BulletFire(_XboxImage1, 90));
+        seq.AppendCallback(() => BulletFire(_XboxImage2, 75));
+        seq.AppendCallback(() => BulletFire(_XboxImage3, 45));
+        seq.AppendCallback(() => BulletFire(_XboxImage4, 60));
+
+        seq.AppendInterval(1.7f);
+
     }
 
     private void BulletFire(GameObject createPos, int angle)

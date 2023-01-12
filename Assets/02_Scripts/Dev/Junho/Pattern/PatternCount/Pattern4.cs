@@ -27,8 +27,11 @@ public class Pattern4 : MonoBehaviour
         seq.AppendCallback(RandomLaser); // 이거 개수 늘리면 많아짐
         seq.AppendCallback(RandomLaser);
         seq.AppendCallback(RandomLaser);
+        seq.AppendCallback(RandomLaser);
+        seq.AppendCallback(RandomLaser);
+        seq.AppendCallback(RandomLaser);
 
-        seq.AppendInterval(5f);
+        seq.AppendInterval(7.5f);
 
         seq.Append(transform.DOMove(new Vector2(0, 30), 0.5f));
     }
@@ -36,14 +39,14 @@ public class Pattern4 : MonoBehaviour
     private void RandomLaser() //전체 가로 -26 ~ 26, 세로 -14.5 ~ 14.5
     {
         Sequence seq = DOTween.Sequence();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i <8; i++)
         {
             int rand = Random.Range(-26, 27);
 
             seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(rand, 0), new Vector2(2, 30), 0.2f)));
-            seq.AppendInterval(0.3f);
+            seq.AppendInterval(0.4f);
             seq.AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(rand, 32), new Vector2(2, 30), new Vector3(rand, -32), 0.5f, 0.5f)));
-            seq.AppendInterval(0.3f);
+            seq.AppendInterval(0.5f);
         }
     }
 

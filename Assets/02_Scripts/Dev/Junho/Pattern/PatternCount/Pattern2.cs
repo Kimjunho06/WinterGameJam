@@ -37,11 +37,11 @@ public class Pattern2 : MonoBehaviour
         
         seq.AppendInterval(0.2f);
         seq.AppendCallback(RotateLaser);
-        seq.AppendInterval(4.05f);
+        seq.AppendInterval(4.08f);
         seq.AppendCallback(RotateLaser);
-        seq.AppendInterval(3.75f);
+        seq.AppendInterval(3.78f);
         seq.AppendCallback(RotateLaser);
-        seq.AppendInterval(3.65f);
+        seq.AppendInterval(3.68f);
         seq.AppendCallback(RotateLaser);
         seq.AppendInterval(3.6f);
 

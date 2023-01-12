@@ -44,13 +44,13 @@ public class Pattern : MonoBehaviour
         seq.AppendCallback(() => _pattern2.Pattern2Process());
         seq.AppendInterval(15.5f);
         seq.AppendCallback(() => _pattern3.Pattern3Process());
-        seq.AppendInterval(7.5f);//여기까지 함
-        seq.AppendCallback(() => _pattern4.Pattern4Process());
-        seq.AppendInterval(10f);
+        seq.AppendInterval(7.5f);
+        seq.AppendCallback(() => _pattern4.Pattern4Process()); 
+        seq.AppendInterval(14.2f);
         seq.AppendCallback(() => _pattern5.Pattern5Process());
-        seq.AppendInterval(10f);
-        seq.AppendCallback(() => _pattern6.Pattern6Process());
-        seq.AppendInterval(10f);
+        seq.AppendInterval(17f);
+        seq.AppendCallback(() => _pattern6.Pattern6Process()); //여기까지 함
+        seq.AppendInterval(19f);
         seq.AppendCallback(() => _pattern7.Pattern7Process());
         seq.AppendInterval(10f);
         seq.AppendCallback(() => _pattern8.Pattern8Process());
