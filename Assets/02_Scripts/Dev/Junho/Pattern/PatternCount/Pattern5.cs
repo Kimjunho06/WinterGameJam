@@ -44,7 +44,7 @@ public class Pattern5 : MonoBehaviour
         seq.Append(transform.DOScale(new Vector3(1,2f, 1.2f), 0.2f));
         seq.Append(transform.DOScale(new Vector3(0.8f, 0.8f), 0.2f));
         seq.Append(transform.DOScale(new Vector3(1f, 1f), 0.2f));
-        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
+        seq.AppendCallback(() => _player.CamShakeSet(7, 0.5f));
 
         seq.AppendInterval(0.2f);
 

@@ -62,7 +62,7 @@ public class Pattern6 : MonoBehaviour
             seq.AppendCallback(() => XBoxMove(_XboxImage2, new Vector2(-17, -10), 0.3f)); // аб 2
             seq.AppendInterval(0.3f);
             seq.AppendCallback(() => XBoxMove(_XboxImage2, new Vector2(-20.5f, -10), 0.1f));
-        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
+        seq.AppendCallback(() => _player.CamShakeSet(7, 0.5f));
 
         seq.AppendInterval(0.8f);
     

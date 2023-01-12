@@ -28,7 +28,7 @@ public class Pattern8 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2.8f, 2.95f), 0.5f));
-        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
+        seq.AppendCallback(() => _player.CamShakeSet(7, 0.5f));
         seq.AppendInterval(0.07f);
         seq.AppendCallback(() => _player._isMoveLimit = true);
 

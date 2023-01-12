@@ -1985,6 +1985,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 138600625058571384, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 138600625058571384, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 138600625058571384, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2025,9 +2033,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 138600625058571385, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: _dashDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138600625058571385, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
       propertyPath: OptionPanel
       value: 
       objectReference: {fileID: 319155735}
+    - target: {fileID: 138600625058571386, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 138600625058571386, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 138600625058571386, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
       propertyPath: m_Enabled
       value: 1

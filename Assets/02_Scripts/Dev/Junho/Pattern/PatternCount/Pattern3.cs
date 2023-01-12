@@ -43,7 +43,7 @@ public class Pattern3 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2, 2), 0.1f));
-        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
+        seq.AppendCallback(() => _player.CamShakeSet(7, 0.5f));
         seq.AppendInterval(0.1f);
 
         seq.AppendCallback(() => _isBounce = true);

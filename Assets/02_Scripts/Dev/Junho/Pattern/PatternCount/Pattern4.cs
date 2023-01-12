@@ -26,7 +26,7 @@ public class Pattern4 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         
         seq.Append(transform.DOMove(new Vector2(0, 0), 0.3f));
-        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
+        seq.AppendCallback(() => _player.CamShakeSet(7, 0.5f));
 
         seq.AppendInterval(0.5f);
 
@@ -49,9 +49,9 @@ public class Pattern4 : MonoBehaviour
         {
             int rand = Random.Range(-26, 27);
 
-            seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(rand, 0), new Vector2(2, 30), 0.2f)));
+            seq.AppendCallback(() => StartCoroutine(CreateWarning(new Vector2(1, 0), new Vector2(2, 30), 0.2f)));
             seq.AppendInterval(0.4f);
-            seq.AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(rand, 32), new Vector2(2, 30), new Vector3(rand, -32), 0.5f, 0.5f)));
+            seq.AppendCallback(() => StartCoroutine(CreateVerticalLaser(new Vector2(rand, 32), new Vector2(1, 30), new Vector3(rand, -32), 0.5f, 0.5f)));
             seq.AppendInterval(0.5f);
         }
     }
