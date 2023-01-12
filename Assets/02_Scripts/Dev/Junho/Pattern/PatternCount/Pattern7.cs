@@ -30,7 +30,7 @@ public class Pattern7 : MonoBehaviour
         seq.Append(_chrome.transform.DOMove(new Vector2(-19.5f, 0), 0.5f));
         seq.Join(_Edge.transform.DOMove(new Vector2(19.5f, 0), 0.5f));
 
-        seq.AppendInterval(0.7f);
+        seq.AppendInterval(0.5f);
 
         seq.AppendCallback(RandomTwistLaser);
         seq.AppendCallback(RandomTwistLaser);
