@@ -61,4 +61,9 @@ public class Pattern : MonoBehaviour
             _gameEndPanel.SetActive(true);
         });
     }
+
+    private void OnDisable()
+    {
+        DOTween.KillAll();
+    }
 }
