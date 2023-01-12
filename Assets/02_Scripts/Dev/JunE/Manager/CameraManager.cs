@@ -27,7 +27,7 @@ public class CameraManager : MonoBehaviour
 
     public void ShackCam(float range, float duration)//흔들림
     {
-        cam.transform.rotation = Quaternion.Euler(0, 0, 0);
+        Invoke("StopShake", duration);
         ranges = range;
         InvokeRepeating("StartShake",0f,0.005f);
         Invoke("StopShake",duration);
