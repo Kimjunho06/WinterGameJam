@@ -15,14 +15,6 @@ public class Pattern8 : MonoBehaviour
         _player = FindObjectOfType<PlayerMove>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pattern8Process();
-        }
-    }
-
     public void Pattern8Process()
     {
         Sequence seq = DOTween.Sequence();

@@ -22,13 +22,6 @@ public class Pattern5 : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerMove>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            Pattern5Process();
-        }
-    }
 
     public void Pattern5Process()
     {

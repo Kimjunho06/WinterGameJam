@@ -55,14 +55,6 @@ public class BlackSkinPrice : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            PlayerPrefs.SetInt("KaeJewel", PlayerPrefs.GetInt("KaeJewel") + 200);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            PlayerPrefs.SetInt("KaeJewel", 0);
-        }
         UpdateBlackPrice();
         if (!SelectManager.Instance.IsBuy(index))
         {

@@ -20,11 +20,7 @@ public class Pattern2 : MonoBehaviour
 
     private void Update()
     {
-        CurrentTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Pattern2Process();
-        }        
+        CurrentTime += Time.deltaTime;     
     }
 
     public void Pattern2Process()

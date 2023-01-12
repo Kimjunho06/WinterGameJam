@@ -19,14 +19,6 @@ public class Pattern7 : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerMove>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Pattern7Process();
-        }
-    }
-    
 
     public void Pattern7Process()
     {

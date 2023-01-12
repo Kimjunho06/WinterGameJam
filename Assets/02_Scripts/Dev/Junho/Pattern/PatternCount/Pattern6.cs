@@ -18,15 +18,6 @@ public class Pattern6 : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerMove>();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Pattern6Process();
-        }
-    }
-
     public void Pattern6Process()
     {
         Sequence seq = DOTween.Sequence();

@@ -30,14 +30,6 @@ public class Pattern3 : MonoBehaviour
         StartCoroutine(ChromeBounce());
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Pattern3Process();
-        }
-    }
-
     public void Pattern3Process()
     {
         Sequence seq = DOTween.Sequence();

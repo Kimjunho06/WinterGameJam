@@ -13,13 +13,6 @@ public class Pattern4 : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerMove>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Pattern4Process();
-        }
-    }
 
     public void Pattern4Process()
     {

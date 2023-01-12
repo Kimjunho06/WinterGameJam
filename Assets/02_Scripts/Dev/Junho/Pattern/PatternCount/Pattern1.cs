@@ -16,13 +16,6 @@ public class Pattern1 : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerMove>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Pattern1Process();
-        }
-    }
 
     public void Pattern1Process() // 메인 과정
     {
