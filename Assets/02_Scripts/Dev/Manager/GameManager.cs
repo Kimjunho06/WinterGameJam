@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         if(PlayerPrefs.GetString($"{0}","200캐") == "200캐")
         {
             PlayerPrefs.SetString($"{0}", "삼");
+            PlayerPrefs.SetString($"{0}", "삼");
             PlayerPrefs.SetInt("ColorIndex", 0);
         }
     }

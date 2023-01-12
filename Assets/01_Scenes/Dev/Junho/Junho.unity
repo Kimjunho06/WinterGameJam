@@ -1970,7 +1970,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 340223687, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
       propertyPath: m_SortingOrder
-      value: 1000
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 138600625058571380, guid: 65751a80f47c4154fa443e0899e7a344, type: 3}
       propertyPath: audioSource
