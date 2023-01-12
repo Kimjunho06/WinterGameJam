@@ -24,10 +24,12 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] CinemachineVirtualCamera cam;
     float ranges= 0;
-
+    bool a = false;
     public void ShackCam(float range, float duration)//흔들림
     {
-        Invoke("StopShake", duration);
+        if(a)
+            Invoke("StopShake",0);
+        a = false;
         ranges = range;
         InvokeRepeating("StartShake",0f,0.005f);
         Invoke("StopShake",duration);
@@ -35,6 +37,7 @@ public class CameraManager : MonoBehaviour
 
     void StartShake()
     {
+        a = true;
         float cameraRotX = Random.value * ranges * 2 - ranges;
         float cameraRotY = Random.value * ranges * 2 - ranges;
         cam.transform.rotation = Quaternion.Euler(cameraRotX,cameraRotY,0);
