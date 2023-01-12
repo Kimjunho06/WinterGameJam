@@ -29,6 +29,7 @@ public class Pattern1 : MonoBehaviour
         seq.AppendInterval(0.4f);
         seq.Append(transform.DOMove(new Vector3(0, 9, 0), 0.8f)); // 여기까지 크롬 내려오는 과정
         seq.AppendCallback(() => StartCoroutine(ChromeBounce()));
+        seq.AppendInterval(0.5f); // 가로 패턴 끝날 떄 까지 대기 초
         
 
         seq.AppendCallback(RepeatHorizontalLaser);
@@ -40,7 +41,7 @@ public class Pattern1 : MonoBehaviour
             RepeatRightLaser();
         });
 
-        seq.AppendInterval(2.5f); // 세로 패턴 끝날 때 까지 대기 초
+        seq.AppendInterval(2.2f); // 세로 패턴 끝날 때 까지 대기 초
         
         seq.AppendCallback(Pattern1Last);
 

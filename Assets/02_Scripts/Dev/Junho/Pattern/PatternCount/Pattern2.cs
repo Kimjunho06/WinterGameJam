@@ -35,15 +35,15 @@ public class Pattern2 : MonoBehaviour
         seq.AppendCallback(() => _verticalLaser.transform.DOScale(new Vector3(2, 70), 0.2f)); // 啊款单 农芬苞 饭捞历 积己
 
         
-        seq.AppendInterval(0.1f);
+        seq.AppendInterval(0.2f);
         seq.AppendCallback(RotateLaser);
-        seq.AppendInterval(4.0f);
+        seq.AppendInterval(4.05f);
+        seq.AppendCallback(RotateLaser);
+        seq.AppendInterval(3.75f);
+        seq.AppendCallback(RotateLaser);
+        seq.AppendInterval(3.65f);
         seq.AppendCallback(RotateLaser);
         seq.AppendInterval(3.6f);
-        seq.AppendCallback(RotateLaser);
-        seq.AppendInterval(3.7f);
-        seq.AppendCallback(RotateLaser);
-        seq.AppendInterval(3.5f);
 
 
         seq.AppendCallback(() => _horizontalLaser.transform.DOScale(new Vector3(0, 0), 0.1f));

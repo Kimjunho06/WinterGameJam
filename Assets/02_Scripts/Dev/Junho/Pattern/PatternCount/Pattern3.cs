@@ -46,7 +46,7 @@ public class Pattern3 : MonoBehaviour
 
         seq.AppendCallback(() => _isBounce = true);
 
-        seq.AppendInterval(0.3f);
+        seq.AppendInterval(0.6f);
 
         seq.AppendCallback(RotateChrome);
         
@@ -103,9 +103,8 @@ public class Pattern3 : MonoBehaviour
             }
         }
 
-        seq.AppendInterval(0.1f);
         seq.AppendCallback(() => _isBounce = false);
-        seq.Append(transform.DOScale(new Vector3(0, 0, 0), 0.1f));
+        seq.Join(transform.DOScale(new Vector3(0, 0, 0), 0.1f));
     }
 
     private void BulletFire(GameObject firePos)
