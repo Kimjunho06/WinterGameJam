@@ -7,19 +7,21 @@ public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager Instance = null;
 
-    [SerializeField] GameObject StartPanel;
-    [SerializeField] GameObject StageSelcetPanel;
-    [SerializeField] GameObject ExplainPanel;
+    [SerializeField] GameObject startPanel;
+    [SerializeField] GameObject stageSelcetPanel;
+    [SerializeField] GameObject explainPanel;
     [SerializeField] GameObject titleText;
-    [SerializeField] GameObject GamePower;
-    [SerializeField] GameObject SettingPanel;
-    [SerializeField] GameObject ExplainArrow;
+    [SerializeField] GameObject gamePower;
+    [SerializeField] GameObject settingPanel;
+    [SerializeField] GameObject explainArrow;
+    [SerializeField] GameObject paperPanel;
 
     [SerializeField] AudioSource audioSource;
 
     private bool isCo = false;
     public bool isMax = false;
     private bool isOnPower = false;
+    private bool isMemo = false;
 
     private void Awake()
     {
@@ -41,19 +43,19 @@ public class ButtonManager : MonoBehaviour
     public void WindowKey()
     {
         SoundListen();
-        if (!StartPanel.activeSelf)
+        if (!startPanel.activeSelf)
         {
-            if(ExplainArrow!= null)
-                Destroy(ExplainArrow);
-            StartPanel.SetActive(true);
-            StartPanel.transform.DOScaleX(1f, 0.05f);
-            StartPanel.transform.DOScaleY(1f, 0.08f);
+            if (explainArrow != null)
+                Destroy(explainArrow);
+            startPanel.SetActive(true);
+            startPanel.transform.DOScaleX(1f, 0.05f);
+            startPanel.transform.DOScaleY(1f, 0.08f);
         }
         else
         {
-            StartPanel.transform.DOScaleX(0f, 0.05f);
-            StartPanel.transform.DOScaleY(0f, 0.08f);
-            StartPanel.SetActive(false);
+            startPanel.transform.DOScaleX(0f, 0.05f);
+            startPanel.transform.DOScaleY(0f, 0.08f);
+            startPanel.SetActive(false);
         }
     }
 
@@ -61,7 +63,7 @@ public class ButtonManager : MonoBehaviour
     {
         SoundListen();
         if (!isCo)
-            if (!StageSelcetPanel.activeSelf)
+            if (!stageSelcetPanel.activeSelf)
             {
                 StartCoroutine(trueStageSelect());
             }
@@ -74,9 +76,9 @@ public class ButtonManager : MonoBehaviour
     IEnumerator trueStageSelect()
     {
         isCo = true;
-        StageSelcetPanel.SetActive(true);
+        stageSelcetPanel.SetActive(true);
         titleText.transform.DOMoveY(350, 1f);
-        StageSelcetPanel.transform.DOMoveY(1080, 1f);
+        stageSelcetPanel.transform.DOMoveY(1080, 1f);
         yield return new WaitForSeconds(1f);
         isCo = false;
     }
@@ -85,17 +87,17 @@ public class ButtonManager : MonoBehaviour
     {
         isCo = true;
         titleText.transform.DOMoveY(500, 1f);
-        StageSelcetPanel.transform.DOMoveY(1360, 1f);
+        stageSelcetPanel.transform.DOMoveY(1360, 1f);
         yield return new WaitForSeconds(1f);
-        StageSelcetPanel.SetActive(false);
+        stageSelcetPanel.SetActive(false);
         isCo = false;
     }
 
     public void XButton()
     {
         SoundListen();
-        ExplainPanel.SetActive(false);
-        ExplainPanel.transform.localScale = new Vector3(0, 0, 1);
+        explainPanel.SetActive(false);
+        explainPanel.transform.localScale = new Vector3(0, 0, 1);
 
         isMax = false;
     }
@@ -105,14 +107,14 @@ public class ButtonManager : MonoBehaviour
         SoundListen();
         if (!isMax)
         {
-            ExplainPanel.transform.DOMove(new Vector3(960, 540, 0), 0.05f);
-            ExplainPanel.transform.DOScale(new Vector3(2.4f, 2, 1), 0.05f);
+            explainPanel.transform.DOMove(new Vector3(960, 540, 0), 0.05f);
+            explainPanel.transform.DOScale(new Vector3(2.4f, 2, 1), 0.05f);
             isMax = true;
         }
         else
         {
-            ExplainPanel.transform.DOMove(new Vector3(1450, 335, 0), 0.05f);
-            ExplainPanel.transform.DOScale(new Vector3(1, 1, 1), 0.05f);
+            explainPanel.transform.DOMove(new Vector3(1450, 335, 0), 0.05f);
+            explainPanel.transform.DOScale(new Vector3(1, 1, 1), 0.05f);
             isMax = false;
         }
     }
@@ -120,8 +122,8 @@ public class ButtonManager : MonoBehaviour
     public void MinButton()
     {
         SoundListen();
-        ExplainPanel.transform.DOMove(new Vector3(500, 50, 0), 0.3f);
-        ExplainPanel.transform.DOScale(new Vector3(0, 0, 1), 0.4f);
+        explainPanel.transform.DOMove(new Vector3(500, 50, 0), 0.3f);
+        explainPanel.transform.DOScale(new Vector3(0, 0, 1), 0.4f);
     }
 
     public void ClickPower()
@@ -129,14 +131,14 @@ public class ButtonManager : MonoBehaviour
         SoundListen();
         if (isOnPower)
         {
-            GamePower.SetActive(false);
+            gamePower.SetActive(false);
             isOnPower = false;
         }
         else
         {
-            GamePower.transform.position = new Vector3(152, 100, 0);
-            GamePower.SetActive(true);
-            GamePower.transform.DOMove(new Vector3(152, 135, 0), 0.35f);
+            gamePower.transform.position = new Vector3(152, 100, 0);
+            gamePower.SetActive(true);
+            gamePower.transform.DOMove(new Vector3(152, 135, 0), 0.35f);
             isOnPower = true;
         }
     }
@@ -149,13 +151,13 @@ public class ButtonManager : MonoBehaviour
     public void ClickSetting()
     {
         SoundListen();
-        if (!SettingPanel.activeSelf)
+        if (!settingPanel.activeSelf)
         {
             //StartPanel.transform.DOScaleX(0f, 0.05f);
             //StartPanel.transform.DOScaleY(0f, 0.08f);
             //StartPanel.SetActive(false);
 
-            SettingPanel.SetActive(true);
+            settingPanel.SetActive(true);
         }
         else
             CloseSetting();
@@ -163,6 +165,52 @@ public class ButtonManager : MonoBehaviour
 
     public void CloseSetting()
     {
-        SettingPanel.SetActive(false);
+        settingPanel.SetActive(false);
     }
+
+    public void ClickPaper()
+    {
+        SoundListen();
+        if (!isMemo)
+        {
+            if (!paperPanel.activeSelf)
+            {
+                StartCoroutine(OpenMemo());
+            }
+            else
+            {
+                StartCoroutine(ClosePaper());
+            }
+        }
+    }
+
+    IEnumerator OpenMemo()
+    {
+        isMemo = true;
+        paperPanel.SetActive(true);
+        paperPanel.transform.position = new Vector3(100, 200);
+        paperPanel.transform.localScale = new Vector3(0, 0);
+        paperPanel.transform.DOScale(new Vector3(1, 1, 1), 0.4f);
+        paperPanel.transform.DOMove(new Vector3(1000, 500), 0.4f);
+        yield return new WaitForSeconds(0.4f);
+        isMemo = false;
+    }
+
+    IEnumerator ClosePaper()
+    {
+        isMemo = true;
+        paperPanel.transform.DOScale(new Vector3(0, 0, 1), 0.4f);
+        paperPanel.transform.DOMove(new Vector3(100, 200), 0.4f);
+        yield return new WaitForSeconds(0.4f);
+        paperPanel.SetActive(false);
+        isMemo = false;
+    }
+
+    public void ClickPaperX()
+    {
+        paperPanel.transform.position = new Vector3(100, 200);
+        paperPanel.transform.localScale = new Vector3(0, 0);
+        paperPanel.SetActive(false);
+    }
+
 }
