@@ -17,6 +17,9 @@ public class CameraManager : MonoBehaviour
             Debug.LogError($"{transform} : CameraManager Multiples");
             Destroy(gameObject);
         }
+
+        cam.transform.rotation = Quaternion.Euler(0,0,0);
+        cam.m_Lens.OrthographicSize = 12f;
     }
 
     [SerializeField] CinemachineVirtualCamera cam;
