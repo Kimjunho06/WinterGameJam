@@ -18,7 +18,7 @@ public class IntroTextMove : MonoBehaviour
     TextMeshProUGUI text;
     [SerializeField] AudioSource audioSource;
 
-    private string all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVEXYZ";
+    private string all = "ABCDEFGHIJKLMNOPQRSTUVEXYZ";
 
     private void Awake()
     {
@@ -33,7 +33,7 @@ public class IntroTextMove : MonoBehaviour
     IEnumerator ShowTxt()
     {
         int i = 0;
-        while(i < (int)textNum * 50)
+        while(i < (int)textNum * 40)
         {
             text.text = all[Random.Range(0,all.Length-1)].ToString();
             i++;
