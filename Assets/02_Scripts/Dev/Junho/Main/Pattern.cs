@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pattern : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Pattern : MonoBehaviour
     public Pattern6 _pattern6;
     public Pattern7 _pattern7;
     public Pattern8 _pattern8;
+
+    public GameObject _gameEndPanel;
 
     bool _isOne;
 
@@ -50,10 +53,12 @@ public class Pattern : MonoBehaviour
         seq.AppendCallback(() => _pattern5.Pattern5Process());
         seq.AppendInterval(17f);
         seq.AppendCallback(() => _pattern6.Pattern6Process());
-        seq.AppendInterval(19.55f); //여기까지 함
+        seq.AppendInterval(19.55f);
         seq.AppendCallback(() => _pattern7.Pattern7Process());
         seq.AppendInterval(30f);
         seq.AppendCallback(() => _pattern8.Pattern8Process());
-
+        /*seq.AppendCallback(() => {
+        
+        }); <<<<<<< 여기서 게임 끝*/
     }
 }

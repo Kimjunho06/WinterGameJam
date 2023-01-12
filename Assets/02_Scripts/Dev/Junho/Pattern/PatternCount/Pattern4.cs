@@ -7,7 +7,12 @@ public class Pattern4 : MonoBehaviour
 {
     public GameObject _warningArea;
     public GameObject _verticalLaser;
+    public PlayerMove _player;
 
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerMove>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y))
@@ -21,6 +26,7 @@ public class Pattern4 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         
         seq.Append(transform.DOMove(new Vector2(0, 0), 0.3f));
+        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
 
         seq.AppendInterval(0.5f);
 

@@ -13,7 +13,12 @@ public class Pattern7 : MonoBehaviour
     
     public GameObject _warningArea;
 
-    
+    public PlayerMove _player;
+
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerMove>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.O))
@@ -29,6 +34,7 @@ public class Pattern7 : MonoBehaviour
 
         seq.Append(_chrome.transform.DOMove(new Vector2(-19.5f, 0), 0.5f));
         seq.Join(_Edge.transform.DOMove(new Vector2(19.5f, 0), 0.5f));
+        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
 
         seq.AppendInterval(0.5f);
 

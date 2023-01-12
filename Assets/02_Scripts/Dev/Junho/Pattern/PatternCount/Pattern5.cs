@@ -16,7 +16,12 @@ public class Pattern5 : MonoBehaviour
 
     public bool _isBulletOff = false;
     public bool _isPassPatter6 = false;
+    public PlayerMove _player;
 
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerMove>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
@@ -39,6 +44,7 @@ public class Pattern5 : MonoBehaviour
         seq.Append(transform.DOScale(new Vector3(1,2f, 1.2f), 0.2f));
         seq.Append(transform.DOScale(new Vector3(0.8f, 0.8f), 0.2f));
         seq.Append(transform.DOScale(new Vector3(1f, 1f), 0.2f));
+        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
 
         seq.AppendInterval(0.2f);
 

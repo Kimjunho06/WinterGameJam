@@ -104,6 +104,7 @@ public class PlayerMove : MonoBehaviour
         speed = dashSpeed;
         _isDash = true;
         bxCol.enabled = false;
+        CameraManager.Instance.ShackCam(0.5f, 0.5f);
         SpriteRenderer spriteRenderer = PoolManager.Instance.Pop(dashParticle, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
         if (transform.GetComponent<SpriteRenderer>().color == Color.black)
         {
@@ -119,5 +120,10 @@ public class PlayerMove : MonoBehaviour
         speed = defalutSpeed;
         yield return new WaitForSeconds(_dashDelay);
         _isDash = false;
+    }
+
+    public void CamShakeSet(float range, float duration)
+    {
+        CameraManager.Instance.ShackCam(range, duration);
     }
 }

@@ -18,9 +18,11 @@ public class Pattern3 : MonoBehaviour
     public GameObject middledown;
 
     private bool _isBounce = false;
+    public PlayerMove _player;
 
     private void Awake()
     {
+        _player = FindObjectOfType<PlayerMove>();
     }
 
     private void Start()
@@ -41,6 +43,7 @@ public class Pattern3 : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector2(2, 2), 0.1f));
+        seq.AppendCallback(() => _player.CamShakeSet(10, 0.5f));
         seq.AppendInterval(0.1f);
 
         seq.AppendCallback(() => _isBounce = true);
