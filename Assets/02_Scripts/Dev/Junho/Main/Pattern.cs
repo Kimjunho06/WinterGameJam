@@ -57,8 +57,8 @@ public class Pattern : MonoBehaviour
         seq.AppendCallback(() => _pattern7.Pattern7Process());
         seq.AppendInterval(30f);
         seq.AppendCallback(() => _pattern8.Pattern8Process());
-        /*seq.AppendCallback(() => {
-        
-        }); <<<<<<< 여기서 게임 끝*/
+        seq.AppendCallback(() => {
+            _gameEndPanel.SetActive(true);
+        });
     }
 }

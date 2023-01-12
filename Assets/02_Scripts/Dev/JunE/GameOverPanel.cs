@@ -24,12 +24,10 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        Time.timeScale = 0;
         collectKae.text = $"얻은 캐: {PlayerPrefs.GetInt("KaeCollect", 0)}";
     }
     public void CheckButton()
     {
-        Debug.Log("123");
         if (selectIndex == 0)
         {
             SceneManager.LoadScene(0);
@@ -59,8 +57,9 @@ public class GameOverPanel : MonoBehaviour
         text.gameObject.SetActive(true);
         Sequence seq = DOTween.Sequence();
         seq.Append(text.DOFade(1, 0.6f));
+        yield return new WaitForSeconds(0.6f);
         seq.Append(text.DOFade(0, 0.6f));
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.6f);
         text.gameObject.SetActive(false);
     }
 

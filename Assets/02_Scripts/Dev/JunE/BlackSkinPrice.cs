@@ -20,9 +20,9 @@ public class BlackSkinPrice : MonoBehaviour
     public void UpdateBlackPrice()
     {
         price = 0;
-        for(int i = 0; i < index; i++)
+        for (int i = 0; i < index; i++)
         {
-            if(!SelectManager.Instance.IsBuy(i))
+            if (!SelectManager.Instance.IsBuy(i))
                 price += 200;
         }
     }
@@ -55,12 +55,16 @@ public class BlackSkinPrice : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            PlayerPrefs.SetInt("KaeJewel",0);
+            PlayerPrefs.SetInt("KaeJewel", PlayerPrefs.GetInt("KaeJewel") + 200);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlayerPrefs.SetInt("KaeJewel", 0);
         }
         UpdateBlackPrice();
-        if(!SelectManager.Instance.IsBuy(index))
+        if (!SelectManager.Instance.IsBuy(index))
         {
             priceTxt.text = $"{price}캐";
         }
