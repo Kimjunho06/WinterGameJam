@@ -5,7 +5,9 @@
 </div>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/3e1dab48-cb04-48ae-9028-fe0a4dd2b276" width="1200" height="600">
+  <img src="https://github.com/user-attachments/assets/7bde26f3-8931-4478-a711-c47d748ff9a1" width="600" height="600">
+  <img src="https://github.com/user-attachments/assets/99ce0861-02da-4277-8e96-2275fd5c4477" width="600" height="600">
 
-`직접 보스가 되어` 보스 패턴을 쓰며 보스의 쾌감을 누릴 수 있는 게임입니다. 또 `한 컴퓨터로 두 명이 참여`하여 본인의 실력을 보여줄 수 있습니다.
+`“컴퓨터 속에 들어간 "하이퍼", 컴퓨터 세상속에서 살아남아라!”`라는 목표를 가진 `2D 리듬 탄막피하기 게임`입니다.
 </div>
+
